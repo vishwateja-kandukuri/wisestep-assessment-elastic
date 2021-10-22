@@ -3,6 +3,7 @@ package com.assessment.boot;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -13,6 +14,7 @@ import com.assessment.boot.model.LocationInfo;
 import com.assessment.boot.repository.LocationInfoRepository;
 
 @SpringBootApplication
+@CrossOrigin
 @RestController
 public class WisestepAssessmentElasticApplication {
 
