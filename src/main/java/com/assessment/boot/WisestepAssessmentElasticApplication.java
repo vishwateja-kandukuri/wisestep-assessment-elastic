@@ -1,12 +1,12 @@
 package com.assessment.boot;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.assessment.boot.model.LocationInfo;
@@ -20,13 +20,18 @@ public class WisestepAssessmentElasticApplication {
 	private LocationInfoRepository repository;
 	
 	@PostMapping("/saveLocation")
-	public void saveLocation(LocationInfo location) {
+	public void saveLocation(@RequestBody LocationInfo location) {
 		repository.save(location);
 	}
 	
 	@GetMapping("/readAll")
 	public Iterable<LocationInfo> readAll(){
 		return repository.findAll();
+	}
+
+	@PutMapping("/deleteAll")
+	public void deleteAll() {
+		repository.deleteAll();
 	}
 	
 	public static void main(String[] args) {

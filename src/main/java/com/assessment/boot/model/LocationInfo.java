@@ -14,7 +14,6 @@ import lombok.NoArgsConstructor;
 public class LocationInfo {
 	
 	@Id
-	private String id;
 	private String locationInput;
 	public String getLocationInput() {
 		return locationInput;
